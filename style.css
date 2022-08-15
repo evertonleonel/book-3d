@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  perspective: 800px;
+}
+
+.books {
+  background-image: url(/image/livro15.png);
+  background-size: cover;
+  width: 400px;
+  height: calc(400px * 1.4);
+  transform-style: preserve-3d;
+  transition:  .3s;
+  box-shadow: 10px 10px 10px  rgba(0,0,0,0.3);
+}
+
+.books::before {
+  content: '';
+  position: absolute;
+  background-image: url(/image/livro07.png);
+  width: 45px;
+  height: 100%;
+  transform-origin: left;
+  transform: rotateY(-90deg) translate(-100%);
+}
+
+.books:hover {
+  transform: rotateY(45deg) translateY(-45px);
+  box-shadow: 10px 20px 25px  rgba(0,0,0,0.2);
+}

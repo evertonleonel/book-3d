@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* aumentando a perpectiva do elemento pai dos livros */
+  perspective: 800px;
+}
+
+.books {
+  background-size: cover;
+  width: 100px;
+  height: calc(100px * 1.4);
+  transform-style: preserve-3d;
+  transition:  .3s;
+  box-shadow: 10px 10px 10px  rgba(0,0,0,0.3);
+  height: 100%;
+  width: 100%;
+}
+
+.books::before {
+  content: '';
+  position: absolute;
+  background: red;
+  background-size: cover;
+  width: 45px;
+  height: 100%;
+  transform-origin: left;
+  transform: rotateY(-90deg) translate(-100%);
+}
+
+.books:hover {
+  transform: rotateY(45deg) translateY(-45px);
+  box-shadow: 10px 20px 25px  rgba(0,0,0,0.2);
+}
